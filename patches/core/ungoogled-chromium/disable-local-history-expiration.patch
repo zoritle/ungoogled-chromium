@@ -1,0 +1,13 @@
+# Keep local history langer than 90 days
+
+--- a/components/history/core/browser/history_backend.cc
++++ b/components/history/core/browser/history_backend.cc
+@@ -152,7 +152,7 @@ const int kMaxRedirectCount = 32;
+
+ // The number of days old a history entry can be before it is considered "old"
+ // and is deleted.
+-const int kExpireDaysThreshold = 90;
++const int kExpireDaysThreshold = 90*365;
+
+ // The maximum number of days for which domain visit metrics are computed
+ // each time HistoryBackend::GetDomainDiversity() is called.
